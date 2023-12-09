@@ -27,3 +27,9 @@ The Following Setup is tested and it is working:
 1. Change the data paths `vardir,traindir`  the image folders of CIFAR100 dataset.
 2. Then run `python test.py` in CIFAR file.
 * Other weight files will be open source soon.
+## link
+Our experimental weight of T=6 on the CIFAR100 dataset  can be found in 
+~~~
+link：https://pan.baidu.com/s/1jue9S9hAKFeYCs2iGWXUxg 
+code：4567
+~~~
