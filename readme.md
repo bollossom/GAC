@@ -8,7 +8,6 @@
 
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/gated-attention-coding-for-training-high/image-classification-on-imagenet)](https://paperswithcode.com/sota/image-classification-on-imagenet?p=gated-attention-coding-for-training-high)
-
 ## Prerequisites
 The Following Setup is tested and it is working:
  * Python 3.7
