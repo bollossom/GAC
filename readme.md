@@ -1,5 +1,8 @@
 # Gated Attention Coding for Training High-performance and Efficient Spiking Neural Networks
  Code for Gated Attention Coding
+~~
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/gated-attention-coding-for-training-high/image-classification-on-cifar-100)](https://paperswithcode.com/sota/image-classification-on-cifar-100?p=gated-attention-coding-for-training-high)
+~~
 
 ## Prerequisites
 The Following Setup is tested and it is working:
