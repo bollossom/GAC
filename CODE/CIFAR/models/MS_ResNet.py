@@ -1,10 +1,29 @@
 import torch.nn as nn
 import torch
 import torch
-
+from GAU import *
 from layers import *
 
+class GAC(nn.Module):
+    def __init__(self, T, out_channels):
+        super().__init__()
+        self.TA = TA(T=T)
+        self.SCA = SCA(in_planes=out_channels, kerenel_size=4)  # 34 K=8#18K=4
+        self.sigmoid = nn.Sigmoid()
 
+    def forward(self, x_seq, spikes):
+        x_seq = x_seq.permute(1, 0, 2, 3, 4)
+        spikes = spikes.permute(1, 0, 2, 3, 4)
+        # x_seq B T C H W
+        # spikes B T inplanes H W
+        # x_seq_2 B T inplanes H W
+        x_seq_2 = x_seq
+        TA = self.TA(x_seq_2)
+        SCA = self.SCA(x_seq_2)
+        out = self.sigmoid(TA *SCA)
+        y_seq = out * spikes
+        y_seq = y_seq.permute(1, 0, 2, 3, 4)
+        return y_seq
 def conv3x3(in_planes, out_planes, stride=1, groups=1, dilation=1):
     """3x3 convolution with padding"""
     return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride,
@@ -86,8 +105,8 @@ class ResNet(nn.Module):
         self.fc1 = SeqToANNContainer(nn.Linear(512*block.expansion, num_classes))
 
         self.spike = LIFSpike()
-
         self.T = T
+        self.encoding = GAC(T=self.T, out_channels=64)
 
     def _make_layer(self, block, planes, blocks, stride=1, dilate=False):
         norm_layer = self._norm_layer
@@ -116,11 +135,13 @@ class ResNet(nn.Module):
     def _forward_impl(self, x):
         # x B C H W
         '''encoding'''
-
         x = self.conv1(x)
         x = self.bn1(x)
+        img = x
+        spike = self.spike(x)
+        output = self.encoding(img, spike)
         '''encoding'''
-        x = self.layer1(x)
+        x = self.layer1(output)
         x = self.layer2(x)
         x = self.layer3(x)
         x = self.spike(x)
