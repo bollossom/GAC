@@ -1,8 +1,8 @@
 import torch.nn as nn
 import torch
 import torch
-from GAU import *
-from layers import *
+from models.GAU import *
+from models.layers import *
 
 class GAC(nn.Module):
     def __init__(self, T, out_channels):
