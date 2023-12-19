@@ -6,6 +6,16 @@ Institute of Automation, Chinese Academy of Sciences
 
 University of Electronic Science and Technology of China
 
+
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/gated-attention-coding-for-training-high/image-classification-on-cifar-10)](https://paperswithcode.com/sota/image-classification-on-cifar-10?p=gated-attention-coding-for-training-high)
+
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/gated-attention-coding-for-training-high/image-classification-on-cifar-100)](https://paperswithcode.com/sota/image-classification-on-cifar-100?p=gated-attention-coding-for-training-high)
+
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/gated-attention-coding-for-training-high/image-classification-on-imagenet)](https://paperswithcode.com/sota/image-classification-on-imagenet?p=gated-attention-coding-for-training-high)
+
 :rocket:  :rocket:  :rocket: **News**:
 
 - **Dec. 19, 2023**: Release the code for training and testing.
@@ -16,14 +26,6 @@ Spiking neural networks (SNNs) are emerging as an energy-efficient alternative t
 
 ![avatar](./CODE/GAC_MAIN.png)
 
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/gated-attention-coding-for-training-high/image-classification-on-cifar-10)](https://paperswithcode.com/sota/image-classification-on-cifar-10?p=gated-attention-coding-for-training-high)
-
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/gated-attention-coding-for-training-high/image-classification-on-cifar-100)](https://paperswithcode.com/sota/image-classification-on-cifar-100?p=gated-attention-coding-for-training-high)
-
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/gated-attention-coding-for-training-high/image-classification-on-imagenet)](https://paperswithcode.com/sota/image-classification-on-imagenet?p=gated-attention-coding-for-training-high)
 ## Prerequisites
 The Following Setup is tested and it is working:
  * Python 3.7
