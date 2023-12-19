@@ -11,7 +11,7 @@ University of Electronic Science and Technology of China
 - **Dec. 17, 2023**: Accepted as poster in AAAI2024.
 
 ## Abstract
-Spiking neural networks (SNNs) are emerging as an energy-efficient alternative to traditional artificial neural networks (ANNs) due to their unique spike-based event-driven nature. Coding is crucial in SNNs as it converts external input stimuli into spatio-temporal feature sequences. However, most existing deep SNNs rely on direct coding that generates powerless spike representation and lacks the temporal dynamics inherent in human vision. Hence, we introduce Gated Attention Coding (GAC), a plug-and-play module that leverages the multi-dimensional gated attention unit to efficiently encode inputs into powerful representations before feeding them into the SNN architecture. GAC functions as a preprocessing layer that does not disrupt the spike-driven nature of the SNN, making it amenable to efficient neuromorphic hardware implementation with minimal modifications. Through an observer model theoretical analysis, we demonstrate GAC's attention mechanism improves temporal dynamics and coding efficiency. Experiments on CIFAR10/100 and ImageNet datasets demonstrate that GAC achieves state-of-the-art accuracy with remarkable efficiency. Notably, we improve top-1 accuracy by 3.10\% on CIFAR100 with only 6-time steps and 1.07\% on ImageNet while reducing energy usage to 66.9\% of the previous works. To our best knowledge, it is the first time to explore the attention-based dynamic coding scheme in deep SNNs, with exceptional effectiveness and efficiency on large-scale datasets.
+Spiking neural networks (SNNs) are emerging as an energy-efficient alternative to traditional artificial neural networks (ANNs) due to their unique spike-based event-driven nature. Coding is crucial in SNNs as it converts external input stimuli into spatio-temporal feature sequences. However, most existing deep SNNs rely on direct coding that generates powerless spike representation and lacks the temporal dynamics inherent in human vision. Hence, we introduce Gated Attention Coding (GAC), a **plug-and-play module** that leverages the multi-dimensional gated attention unit to efficiently encode inputs into powerful representations before feeding them into the SNN architecture. GAC functions as a **preprocessing layer** that does not disrupt the spike-driven nature of the SNN, making it amenable to efficient neuromorphic hardware implementation with minimal modifications. Through an observer model theoretical analysis, we demonstrate GAC's attention mechanism improves temporal dynamics and coding efficiency. Experiments on CIFAR10/100 and ImageNet datasets demonstrate that GAC achieves **state-of-the-art** accuracy with remarkable efficiency. Notably, we improve top-1 accuracy by **3.10\%** on CIFAR100 with only 6-time steps and **1.07\%** on ImageNet while reducing energy usage to 66.9\% of the previous works. To our best knowledge, it is the first time to explore the **attention-based dynamic coding schem**e in deep SNNs, with exceptional effectiveness and efficiency on large-scale datasets.
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/gated-attention-coding-for-training-high/image-classification-on-cifar-10)](https://paperswithcode.com/sota/image-classification-on-cifar-10?p=gated-attention-coding-for-training-high)
 
@@ -39,6 +39,25 @@ The Following Setup is tested and it is working:
 2. For CIFAR dataset, to train the model, please run  `run.sh`.
 3. For ImageNet dataset, to train the model, please run  `run.sh` or `CUDA_VISIBLE_DEVICES=GPU_IDs python -m torch.distributed.launch --master_port=1234 --nproc_per_node=NUM_GPU_USED train_amp.py -net resnet34 -b 256 -lr 0.1` .
 `-net` option supports `resnet18/34` .
+
+## Results on CIFAR
+
+|    **model**    | **T** | Params(M) | Top-1 Acc on C10/C100 |
+| :-------------: | :---: | :-------: | :-------------------: |
+| GAC-MSResNet-18 |   6   |   12.63   |    **96.46/80.45**    |
+| GAC-MSResNet-18 |   4   |   12.63   |    **96.24/79/83**    |
+| GAC-MSResNet-18 |   2   |   12.63   |    **96.18/78.92**    |
+
+## Results on Imagenet-1K
+
+|    **model**    | **T** | Params(M) | Power(mj) | **Top-1 Acc** |
+| :-------------: | :---: | :-------: | :-------: | :-----------: |
+| GAC-MSResNet-18 |   4   |   11.82   |   1.49    |   **64.05**   |
+| GAC-MSResNet-18 |   6   |   11.82   |   2.34    |   **65.14**   |
+| GAC-MSResNet-34 |   4   |   21.93   |   2.20    |   **69.77**   |
+| GAC-MSResNet-34 |   6   |   21.93   |   3.38    |   **70.42**   |
+
+
 
 ## Weight file
 * Due to the size limit of the uploaded file, we currently open source the experimental weight of T=6 on the CIFAR100 dataset CIFAR100_T=6.pth.
