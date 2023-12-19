@@ -46,7 +46,6 @@ The Following Setup is tested and it is working:
 3. For ImageNet dataset, to train the model, please run  `run.sh` or `CUDA_VISIBLE_DEVICES=GPU_IDs python -m torch.distributed.launch --master_port=1234 --nproc_per_node=NUM_GPU_USED train_amp.py -net resnet34 -b 256 -lr 0.1` .
 `-net` option supports `resnet18/34` .
 
-![GAC](./CODE/GAC_TOP.png)
 
 ## Results on CIFAR
 
