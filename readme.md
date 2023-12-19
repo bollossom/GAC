@@ -1,6 +1,7 @@
-# Gated Attention Coding for Training High-performance and Efficient Spiking Neural Networks [AAAI24](https://arxiv.org/abs/2308.06582))
+# Gated Attention Coding for Training High-performance and Efficient Spiking Neural Networks ([AAAI24](https://arxiv.org/abs/2308.06582))
 
 [Xuerui Qiu](https://scholar.google.com/citations?user=bMwW4e8AAAAJ&hl=zh-CN), [Rui-Jie Zhu](https://scholar.google.com/citations?user=08ITzJsAAAAJ&hl=zh-CN), [Yuhong Chou](),[Zhaorui Wang](), [Liang-Jian Deng](https://scholar.google.com/citations?user=TZs9NxkAAAAJ&hl=zh-CN), [Guoqi Li](https://scholar.google.com/citations?user=qCfE--MAAAAJ&)
+
 Institute of Automation, Chinese Academy of Sciences
 University of Electronic Science and Technology of China
 
@@ -51,3 +52,48 @@ Our experimental weight of T=6 on the CIFAR100 dataset  can be found in
 link：https://pan.baidu.com/s/1jue9S9hAKFeYCs2iGWXUxg 
 code：4567
 ~~~
+
+## Data Prepare
+
+- use `PyTorch` to load the CIFAR10 and CIFAR100 dataset.
+Tree in `./data/`.
+
+```shell
+.
+├── cifar-100-python
+├── cifar-10-batches-py
+
+```
+
+ImageNet with the following folder structure, you can extract imagenet by this [script](https://gist.github.com/BIGBALLON/8a71d225eff18d88e469e6ea9b39cef4).
+
+```shell
+│imagenet/
+├──train/
+│  ├── n01440764
+│  │   ├── n01440764_10026.JPEG
+│  │   ├── n01440764_10027.JPEG
+│  │   ├── ......
+│  ├── ......
+├──val/
+│  ├── n01440764
+│  │   ├── ILSVRC2012_val_00000293.JPEG
+│  │   ├── ILSVRC2012_val_00002138.JPEG
+│  │   ├── ......
+│  ├── ......
+```
+
+## Contact Information
+
+```
+@article{qiu2023gated,
+  title={Gated Attention Coding for Training High-performance and Efficient Spiking Neural Networks},
+  author={Qiu, Xuerui and Zhu, Rui-Jie and Chou, Yuhong and Wang, Zhaorui and Deng, Liang-jian and Li, Guoqi},
+  journal={arXiv preprint arXiv:2308.06582},
+  year={2023}
+}
+```
+
+For help or issues using this git, please submit a GitHub issue.
+
+For other communications related to this git, please contact `qiuxuerui2024@ia.ac.cn`.
