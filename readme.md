@@ -6,6 +6,10 @@ Institute of Automation, Chinese Academy of Sciences
 
 University of Electronic Science and Technology of China
 
+University of California, Santa Cruz
+
+Xi'an Jiaotong University
+
 
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/gated-attention-coding-for-training-high/image-classification-on-cifar-10)](https://paperswithcode.com/sota/image-classification-on-cifar-10?p=gated-attention-coding-for-training-high)
