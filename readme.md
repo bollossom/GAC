@@ -1,5 +1,16 @@
-# Gated Attention Coding for Training High-performance and Efficient Spiking Neural Networks
- Code for Gated Attention Coding
+# Gated Attention Coding for Training High-performance and Efficient Spiking Neural Networks [AAAI24](https://arxiv.org/abs/2308.06582))
+
+[Xuerui Qiu](https://scholar.google.com/citations?user=bMwW4e8AAAAJ&hl=zh-CN), [Rui-Jie Zhu](https://scholar.google.com/citations?user=08ITzJsAAAAJ&hl=zh-CN), [Yuhong Chou](),[Zhaorui Wang](), [Liang-Jian Deng](https://scholar.google.com/citations?user=TZs9NxkAAAAJ&hl=zh-CN), [Guoqi Li](https://scholar.google.com/citations?user=qCfE--MAAAAJ&)
+Institute of Automation, Chinese Academy of Sciences
+University of Electronic Science and Technology of China
+
+:rocket:  :rocket:  :rocket: **News**:
+
+- **Dec. 19, 2023**: Release the code for training and testing.
+- **Dec. 17, 2023**: Accepted as poster in AAAI2024.
+
+## Abstract
+Spiking neural networks (SNNs) are emerging as an energy-efficient alternative to traditional artificial neural networks (ANNs) due to their unique spike-based event-driven nature. Coding is crucial in SNNs as it converts external input stimuli into spatio-temporal feature sequences. However, most existing deep SNNs rely on direct coding that generates powerless spike representation and lacks the temporal dynamics inherent in human vision. Hence, we introduce Gated Attention Coding (GAC), a plug-and-play module that leverages the multi-dimensional gated attention unit to efficiently encode inputs into powerful representations before feeding them into the SNN architecture. GAC functions as a preprocessing layer that does not disrupt the spike-driven nature of the SNN, making it amenable to efficient neuromorphic hardware implementation with minimal modifications. Through an observer model theoretical analysis, we demonstrate GAC's attention mechanism improves temporal dynamics and coding efficiency. Experiments on CIFAR10/100 and ImageNet datasets demonstrate that GAC achieves state-of-the-art accuracy with remarkable efficiency. Notably, we improve top-1 accuracy by 3.10\% on CIFAR100 with only 6-time steps and 1.07\% on ImageNet while reducing energy usage to 66.9\% of the previous works. To our best knowledge, it is the first time to explore the attention-based dynamic coding scheme in deep SNNs, with exceptional effectiveness and efficiency on large-scale datasets.
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/gated-attention-coding-for-training-high/image-classification-on-cifar-10)](https://paperswithcode.com/sota/image-classification-on-cifar-10?p=gated-attention-coding-for-training-high)
 
