@@ -116,11 +116,14 @@ ImageNet with the following folder structure, you can extract imagenet by this [
 ## Contact Information
 
 ```
-@article{qiu2023gated,
-  title={Gated Attention Coding for Training High-performance and Efficient Spiking Neural Networks},
+@inproceedings{qiu2024gated,
+  title={Gated attention coding for training high-performance and efficient spiking neural networks},
   author={Qiu, Xuerui and Zhu, Rui-Jie and Chou, Yuhong and Wang, Zhaorui and Deng, Liang-jian and Li, Guoqi},
-  journal={arXiv preprint arXiv:2308.06582},
-  year={2023}
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={38},
+  number={1},
+  pages={601--610},
+  year={2024}
 }
 ```
 
