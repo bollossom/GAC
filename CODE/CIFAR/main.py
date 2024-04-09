@@ -119,23 +119,23 @@ def train(model, device, train_loader, criterion, optimizer, epoch, args):
         correct += float(predicted.eq(labels.cpu()).sum().item())
     return running_loss, 100 * correct / total
 
-# @torch.no_grad()
-# def test(model, test_loader, device):
-#     correct = 0
-#     total = 0
-#     model.eval()
-#     for batch_idx, (inputs, targets) in enumerate(test_loader):
-#         inputs = inputs.to(device)
-#         outputs = model(inputs)
-#         mean_out = outputs.mean(1)
-#         _, predicted = mean_out.cpu().max(1)
-#         total += float(targets.size(0))
-#         correct += float(predicted.eq(targets).sum().item())
-#         if batch_idx % 100 == 0:
-#             acc = 100. * float(correct) / float(total)
-#             print(batch_idx, len(test_loader), ' Acc: %.5f' % acc)
-#     final_acc = 100 * correct / total
-#     return final_acc
+@torch.no_grad()
+def test(model, test_loader, device):
+    correct = 0
+    total = 0
+    model.eval()
+    for batch_idx, (inputs, targets) in enumerate(test_loader):
+        inputs = inputs.to(device)
+        outputs = model(inputs)
+        mean_out = outputs.mean(1)
+        _, predicted = mean_out.cpu().max(1)
+        total += float(targets.size(0))
+        correct += float(predicted.eq(targets).sum().item())
+        if batch_idx % 100 == 0:
+            acc = 100. * float(correct) / float(total)
+            print(batch_idx, len(test_loader), ' Acc: %.5f' % acc)
+    final_acc = 100 * correct / total
+    return final_acc
 
 if __name__ == '__main__':
 
@@ -148,8 +148,8 @@ if __name__ == '__main__':
                                               shuffle=False, num_workers=args.workers, pin_memory=True)
 
 
-    parallel_model =  msresnet18(num_classes=100,T=6)
-
+    parallel_model =  msresnet18(num_classes=100)
+    parallel_model.T = 6
 
     parallel_model = torch.nn.DataParallel(parallel_model)
 
