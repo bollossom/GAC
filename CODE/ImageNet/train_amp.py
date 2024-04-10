@@ -97,8 +97,8 @@ def eval_training(epoch, args):
         mean_out = outputs.mean(1)
         
 
-        loss = TET_loss(outputs,labels,criterion,1.0,1e-3)
-        # criterion(mean_out,labels)
+        # loss = TET_loss(outputs,labels,criterion,1.0,1e-3)
+        criterion(mean_out,labels)
         test_loss += loss.item()
 
         _, predicted = mean_out.cpu().max(1)
@@ -209,8 +209,8 @@ if __name__ == '__main__':
     # learning rate should go with batch size.
     b_lr = args.lr
 
-    criterion = TET_loss().cuda()
-    # criterion =CrossEntropyLabelSmooth().cuda()
+    # criterion = TET_loss().cuda()
+    criterion =CrossEntropyLabelSmooth().cuda()
     optimizer = optim.SGD([{
         'params': net.parameters(),
         'initial_lr': b_lr
