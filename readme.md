@@ -56,7 +56,7 @@ The Following Setup is tested and it is working:
 |    **model**    | **T** | Params(M) | Top-1 Acc on C10/C100 |
 | :-------------: | :---: | :-------: | :-------------------: |
 | GAC-MSResNet-18 |   6   |   12.63   |    **96.46/80.45**    |
-| GAC-MSResNet-18 |   4   |   12.63   |    **96.24/79/83**    |
+| GAC-MSResNet-18 |   4   |   12.63   |    **96.24/79.83**    |
 | GAC-MSResNet-18 |   2   |   12.63   |    **96.18/78.92**    |
 
 ## Results on Imagenet-1K
